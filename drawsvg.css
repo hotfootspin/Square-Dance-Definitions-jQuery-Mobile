@@ -1,0 +1,120 @@
+body { font-family: Verdana, Helvetica, Arial, sans-serif; }
+
+h1 { font-size: 1.75em; }
+
+/* tables on the definition pages */
+table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+table td { 
+  padding-right: 1em; 
+  padding: 0.4em 1em; 
+  vertical-align: top; 
+}
+table.info td { 
+  background-color: #dcc;
+  border: 1px solid #fff;
+}
+table.info td:nth-child(1) { text-align: right; white-space: nowrap; width: 25%; }
+table.reference td:nth-child(1) { text-align: right; white-space: nowrap; }
+table.reference td {
+  background-color: #e9e6e2;
+  border: 1px solid #fff; 
+  font-size: 0.9em;
+}
+
+/* figures on the definition pages */
+figure { width: 96%; margin: 2em auto; }
+figcaption { text-align: center; font-size: 0.9em; font-style: italic; margin-top: 0.4em; }
+figure div { text-align: center; text-shadow: none; }
+.diamond div { display: inline-block; vertical-align: center; height: 130px; 
+  margin-left: 8px; margin-right: 8px;
+}
+
+/* home page - spaced out buttons */
+ul#pageList li { margin: 2em 1em; }
+ul#pageList li { opacity: 0.85; } 
+ul#pageList a { border: 2px solid maroon; }
+
+#cederlink, #tamlink, #mixedlink { font-weight: normal; text-decoration: none; text-align: center; }
+
+div[data-role="footer"] h2 { font-weight: normal; color: #cbb; font-size: 0.9em !important; }
+
+#homepage {
+  background-image: url(images/thar.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 100%;
+}
+#homepage div[data-role="content"] {
+  background-color: transparent !important;
+}
+
+.ui-header .ui-title {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+#about p { text-align: center; margin-top: 0.3em; padding-top: 0; margin-bottom: 0; padding-bottom: 0; }
+#about h2 { text-align: center; font-size: 1.4em; }
+#about h3 { text-align: center; padding-bottom: 1.5em; font-size: 1.15em; }
+#about p#more { padding-top: 1.5em; }
+#about, #about div[data-role="content"] { background-color: #fff0e0; }
+#glossary, #glossary div[data-role="content"] { background-color: #fff0e0; }
+
+#callList li img { margin-bottom: 2px; margin-top: -2px; }
+
+#callname { font-weight: bold; color: #2020c0; }
+
+.ui-icon-fav:after { background-image: url(images/redstar.svg); }
+
+#draw_h2 { 
+  text-align: center; 
+  color: maroon; 
+  font-size: 1.4em; 
+  margin: 0; 
+  padding: 0 0 0.4em 0; 
+  width: 100%;
+}
+
+#mynavbar { background-color: white; width: 100%; padding: 0; margin: 0; }
+#mynavbar ul { list-style: none; width: 100%; padding: 0; margin: 0; text-align: center; }
+#mynavbar ul li { 
+  display: inline-block; 
+  width: 30.5%; 
+  text-align: center; 
+  margin: 3px 0;
+}
+#mynavbar ul li a { 
+  display: inline-block; 
+  width: 100%;
+  padding: 3px 0 1px; 
+  margin: 0; 
+  /* border: 1px solid maroon;  */
+  background-color: #dcc;
+}
+#mynavbar ul li a:hover { 
+  background-color: maroon;
+}
+#mynavbar ul li a img { height: 14px; }
+
+#mynavbar2 { width: 100%; }
+div[data-role="controlgroup"] { text-align: center; width: 100%; padding: 0; }
+div[data-role="controlgroup"] a { padding-left: 1.2em; padding-right: 1.2em; max-width: 30%; }
+div[data-role="controlgroup"] img { height: 14px; margin-top: 1px; margin-bottom: -1px;
+padding-left: 4px; padding-right: 4px; }
+
+/* div.shadow[data-role="header"] { box-shadow: 0 2px 2px #842; } */
+/* div[data-role="footer"] { box-shadow: 0 -2px 2px #842; } */
+
+p#legend {
+    text-align: center;
+    margin: 0;
+    vertical-align: middle;
+}
+p#legend img {
+    margin-top: 1px;
+    margin-bottom: -1px;
+} 
+p#legend img:nth-child(2) { padding-left: 3em; }
+
+.info, .reference { text-shadow: none; }
+#definition .ui-mini { padding: 0.25em 0.5em; }

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Square Dance Dictionary</title>
+  <link rel="stylesheet" href="themes/markb-maroon-theme.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  
+  <style type="text/css">
+  @import "drawsvg.css";
+  </style>
+
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/lists.js"></script>
+</head>
+
+<body>
+  <!-- =========== home page ================ -->
+  <div data-role="page" data-theme="c" id="homepage">
+    <div data-role="header" data-position="fixed" data-tap-toggle="true">
+      <!--
+      <a href="#homepage" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+      -->
+      <h1>Square Dance Dictionary</h1>
+    </div>
+    <div data-role="content" data-theme="c">
+
+      <ul id="pageList" data-role="listview">
+        <li><a href="#browse">Browse by Level</a></li>
+        <li><a href="calls.html?id=Fav" data-ajax="false">My Favorites</a></li>
+        <li data-icon="clock"><a href="calls.html?id=All" data-ajax="false">All Calls (Warning: Slow)</a></li>
+        <li><a href="#glossary">About These Lists</a></li>
+        <li><a href="#about">About This Project</a></li>
+      </ul>
+
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="true" >
+      <h2>&copy; 2014 Mark Brautigam</h2>
+    </div>
+  </div>
+
+  <!-- =========== browse page ================ -->
+  <div data-role="page" data-theme="c" id="browse">
+    <div data-role="header" data-position="fixed" data-tap-toggle="true">
+      <a href="#homepage" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+      <h1>Browse By Level</h1>
+    </div>
+    <div data-role="content" data-theme="c">
+
+      <ul id="levelList" data-role="listview">
+        <li><a href="calls.html?id=C1" data-ajax="false">C1</a></li>
+        <li><a href="calls.html?id=C2" data-ajax="false">C2</a></li>
+        <li><a href="calls.html?id=C3" data-ajax="false">C3</a></li>
+        <li><a href="calls.html?id=C3A" data-ajax="false">C3A</a></li>
+        <li><a href="calls.html?id=C3B" data-ajax="false">C3B</a></li>
+        <li><a href="calls.html?id=C3X" data-ajax="false">C3X</a></li>
+        <li><a href="calls.html?id=C4A" data-ajax="false">C4A</a></li>
+        <li><a href="calls.html?id=C4B" data-ajax="false">C4B</a></li>
+        <li><a href="calls.html?id=C4Z" data-ajax="false">C4Z</a></li>
+        <li><a href="calls.html?id=U" data-ajax="false">C4 Unified List</a></li>
+        <li><a href="calls.html?id=I" data-ajax="false">Deprecated List</a></li>
+      </ul>
+
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="true" >
+      <h2>&copy; 2014 Mark Brautigam</h2>
+    </div>
+  </div>
+
+  <!-- =========== about page ================ -->
+  <div data-role="page" data-theme="c" id="about">
+    <div data-role="header" data-position="fixed" data-tap-toggle="true">
+      <a href="#homepage" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+      <h1>About This Project</h1>
+    </div>
+    <div data-role="content" data-theme="c">
+
+      <h2 id="maintitle">Square Dance<br />Call Definitions</h2>
+
+      <h3 id="subtitle">
+      A dictionary of 1400<br />challenge level square dance<br />calls from C1 through C4</h3>
+
+      <p id="author">Mark Brautigam</p> 
+      <p id="site1"><a href="http://www.mixed-up.com/">Mixed-Up Squares</a></p> 
+      <p id="course">GDES 051 - Mobile App Design and Development</p> 
+      <p id="college">Mission College</p> 
+      <p id="date">3 March 2014</p>
+
+      <p id="more">More information about square dancing:</p> 
+      <p id="site2"><a href="http://www.mixed-up.com/">www.mixed-up.com</a></p> 
+
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="true" >
+      <h2>&copy; 2014 Mark Brautigam</h2>
+    </div>
+  </div>
+
+  <!-- =========== glossary page ================ -->
+  <div data-role="page" data-theme="c" id="glossary">
+    <div data-role="header" data-position="fixed" data-tap-toggle="true">
+      <a href="#homepage" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+      <h1>About These Lists</h1>
+    </div>
+    <div data-role="content" data-theme="c">
+
+      <div data-role="collapsible" data-collapsed="false">
+        <h2>Callerlab</h2>
+        <p>These lists come from various sources. 
+        Up to C3B, the lists are maintained
+        by Callerlab, the International Square Dance Caller Association.</p>
+      </div>
+            
+      <div data-role="collapsible">
+        <h2>C3X and C4 Lists</h2>
+        <p>The C3X and C4 lists are maintained by various C4 callers and dancers. 
+        In this project, there are 3 ways of indicating a C3X or C4 call level.</p>
+        <ol>
+          <li>The <em>official</em> level is indicated by Clark Baker's lists.
+          <li>Vic Ceder also maintains lists of calls he uses at various dances.
+          <li>The C4 Unified List shows calls used by six different C4 callers.
+        </ol>
+        <p><b>C3X</b> indicates calls not on any Callerlab list but commonly called at
+        C3 dances.</p>
+        <p><b>C3X+</b> indicates calls that were once on a C3X list but have been
+        deleted. </p>
+        <p><b>C4A</b> indicates calls that will be heard at easy C4 dances.</p>
+        <p><b>C4B</b> indicates 
+        calls that will be heard at hard C4 dances.</p>
+        <p>Where a call appears in brackets, such as <b>[C4A]</b>, this means the call
+        is not on any of Clark Baker's lists, so we show the placement on Vic Ceder's
+        lists instead.</p>
+      </div>
+            
+      <div data-role="collapsible">
+        <h2>C4 Unified List</h2>
+        <p>The C4 Unified List has six letters <b>BCJLRW</b> which indicate that the
+        following callers use this call at C4 dances: </p>
+        <b>B</b> = Clark Baker<br />
+        <b>C</b> = Vic Ceder<br />
+        <b>J</b> = Mike Jacobs<br />
+        <b>L</b> = Lynette Bellini<br />
+        <b>R</b> = Ben Rubright<br />
+        <b>W</b> = Dave Wilson
+      </div>
+            
+      <div data-role="collapsible">
+        <h2>Deprecated List</h2>
+        <p>The Deprecated or <em>Ice Cold</em> list contains calls that should never be
+        heard at C4 dances, but since they were at one time on some list, they ought to be
+        noted.  These calls have six letters <b>EFGUZX</b> that indicate why the call is on
+        this list:</p>
+        <b>E</b> = Vic Ceder's <em>rarely used</em> call list<br />
+        <b>F</b> = Vic Ceder's <em>never used</em> call list<br />
+        <b>G</b> = Vic Ceder's <em>defunct</em> call list<br />
+        <b>U</b> = Lynette Bellini's <em>never used</em> call list<br />
+        <b>X</b> = Galburt's Glossary C4X list <br />
+        <b>Z</b> = Clark Baker's C4Z list
+      </div>
+            
+      <div data-role="collapsible">
+        <h2>Resources</h2>
+        <p>Some fields in this database refer to these resources: </p>
+        <p><i>The Square Dance Encyclopedia</i>, by Bill <b>Burleson</b>, 2002</p>
+        <p><i>The Handbook of Modern Square Dancing</i>, by <b>Jay King</b>, 1976</p>
+        <p><i>Glossary of Square Dance Calls</i>, by Lee <b>Kopman</b>, 1971</p>
+        <p>Some calls have links to these web sites:</p>
+        <p><b>Taminations</b> (animated square dance movements)</p>
+        <p><b>Vic Ceder's</b> database of square dance lists and definitions</p>
+        <p><b>Mixed-Up Squares</b>, the site from which this app originated</p>
+      </div>
+
+      <div data-role="collapsible">
+        <h2>Credits</h2>
+        <p>Square dance definition database &copy; 1988-2014 Mark Brautigam.</p>
+        <p>Thanks to <a href="http://www.mixed-up.com/clark/">Clark Baker</a> for his 
+            lists and also for his Lisp database
+            for most of the diagrams data.</p>
+        <p>Thanks to <b>Kathy Godfrey</b> for the 
+           <a href="http://www.dosado.com/lists/unified.11.1998.txt">C4 Unified List.</a></p>
+        <p>Thanks for <a href="http://www.ceder.net">Vic Ceder</a> for giving me direct 
+            links to the definitions on his web site.</p>
+        <p>Thanks to <a href="http://www.benrubright.com">Ben Rubright</a> for allowing me 
+            to use his C1 and C2 quick
+            definitions, which weren't in the original release.</p>
+      </div>
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="true" >
+      <h2>&copy; 2014 Mark Brautigam</h2>
+    </div>
+  </div>
+
+  <!-- =========== calls page ================ -->
+  <div data-role="page" data-theme="c" id="calls">
+    <div data-role="header" data-position="fixed" data-tap-toggle="true">
+      <a href="#homepage" class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-btn-icon-notext">Home</a>
+      <h1 id="calls_h1">Browse By Level</h1>
+    </div>
+    <div data-role="content" data-theme="c">
+
+      <p class="ui-btn" id="legend"><img src="images/darkcirc.svg" /> Diagrams 
+                                    <img src="images/redstar.svg" /> Favorites</p>
+
+      <ul id="callList" data-role="listview" data-filter="true" data-autodividers="true">
+      
+      </ul>
+
+      <script type="text/javascript">
+      $(document).delegate("#calls", "pageinit", function () {
+        initCallsPage();
+      });
+      </script>
+      
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="true" >
+      <h2>&copy; 2014 Mark Brautigam</h2>
+    </div>
+  </div>
+
+</body>
+</html>
+

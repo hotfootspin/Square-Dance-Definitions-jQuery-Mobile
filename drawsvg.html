@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Square Dance Dictionary</title>
+  <link rel="stylesheet" href="themes/markb-maroon-theme.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+  <style type="text/css">
+  @import "drawsvg.css";
+  </style>
+
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/lists.js"></script>
+  <script type="text/javascript" src="js/drawsvg.js"></script>
+</head>
+
+<body>
+    <div data-role="header" data-theme="c" data-position="fixed" data-tap-toggle="true" class="shadow">
+      <a href="index.html#homepage" data-ajax="false"
+        class="ui-btn ui-shadow ui-corner-all ui-icon-home ui-alt-icon ui-btn-icon-notext">Home</a>
+      <h1 id="draw_h1">Browse By Level</h1>
+      <!--
+      <a href="#verify" data-rel="popup" data-transition="pop"
+        data-position-to="window"
+        class="ui-btn ui-shadow ui-corner-all ui-icon-fav ui-btn-icon-notext">Fav</a>
+      -->
+
+      <!--
+      <div id="mynavbar">
+        <ul>
+          <li><a href="#" class="ui-btn ui-corner-all" id="prevcall">
+            <img src="themes/images/icons-png/carat-l-black.png" /></a></li>
+          <li><a href="#verify" class="ui-btn ui-corner-all" data-rel="popup" data-transition="pop" data-position-to="window" >
+            <img src="images/blkstar.svg" /></a></li>
+          <li><a href="#" class="ui-btn ui-corner-all" id="nextcall">
+            <img src="themes/images/icons-png/carat-r-black.png" /></a></li>
+        </ul>
+      </div>
+      -->
+
+      <div id="mynavbar2" data-role="controlgroup" data-type="horizontal">
+        <a href="#" class="ui-btn ui-corner-all" id="prevcall">
+          <img src="themes/images/icons-png/carat-l-black.png" />Previous</a></li>
+        <a href="#verify" class="ui-btn ui-corner-all" data-rel="popup" data-transition="pop" data-position-to="window" >
+          <img src="images/blkstar.svg" />Favorite</a></li>
+        <a href="#" class="ui-btn ui-corner-all" id="nextcall">
+          Next Call<img src="themes/images/icons-png/carat-r-black.png" /></a></li>
+      </div>
+
+    </div>
+    <div data-role="content" data-theme="c">
+
+      <h2 id="draw_h2">Call name here</h2>
+
+      <table class="info">
+        <tr><td>Level</td><td id="level"></td></tr> 
+        <tr><td>Author</td><td id="author"></td></tr> 
+        <tr><td>Start</td><td id="start"></td></tr> 
+        <tr><td>End</td><td id="end"></td></tr> 
+      </table>
+
+      <div id="definition">
+      </div>
+
+      <div data-role="collapsible" data-theme="c" data-content-theme="c">
+        <h2>References</h2>
+        <table class="reference">
+          <tr><td>Unified List</td><td id="unified"></td></tr> 
+          <tr><td>Vic Ceder List</td><td id="ceder"></td></tr> 
+          <tr><td>Burleson #</td><td id="burleson"></td></tr> 
+          <tr><td>Lee Kopman Page</td><td id="kopman"></td></tr> 
+          <tr><td>Jay King Page</td><td id="jayking"></td></tr> 
+        </table>
+        <a class="ui-btn" id="cederlink" href="#">Vic Ceder's Web Site</a>
+        <a class="ui-btn" id="tamlink" href="#">Tamination Web Site</a>
+        <a class="ui-btn" id="mixedlink" href="#">Mixed-Up Web Site</a>
+      </div>
+
+      <div data-role="popup" id="verify" data-overlay-theme="b" data-theme="b"
+          data-dismissible="false" style="max-width: 400px;">
+        <div data-role="header">
+          <h3>Add to Favorites?</h3>
+        </div>
+        <div role="main" class="ui-content">
+          <p>Do you want to add the call <span id="callname">this call</span> to your favorites?</p>
+         <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back">Cancel</a>
+          <a href="#" id="addFavorite" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+            data-rel="back" data-transition="flow">Add to Favorites</a>
+        </div>
+      </div>
+
+      <div data-role="popup" id="remove" data-overlay-theme="b" data-theme="b"
+          data-dismissible="false" style="max-width: 400px;">
+        <div data-role="header">
+          <h3>Remove from Favorites?</h3>
+        </div>
+        <div role="main" class="ui-content">
+          <p>Do you want to remove the call 
+            <span id="remname">this call</span> from your favorites?</p>
+         <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back">Cancel</a>
+          <a href="#" id="remFavorite" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"
+            data-rel="back" data-transition="flow">Remove</a>
+        </div>
+      </div>
+
+    </div>
+    <div data-role="footer" data-theme="c" data-position="fixed" data-tap-toggle="true">
+      <h2>&copy; 2014 Mark Brautigam</h2>
+    </div>
+
+    <script type="text/javascript">
+    var PageCall = {
+      callNum: 385
+    };
+
+    var url = document.location.href;
+    var query = url.split("\?")[1];
+    var queries = query.split ("\&");
+    var id = queries[0].split("\=")[1];
+    var list, index;
+    if (queries.length > 1)
+      list = queries[1].split("\=")[1];
+    if (queries.length > 2)
+      index = queries[2].split("\=")[1];
+    PageCall.callNum = id;
+    PageCall.callList = list;
+    PageCall.listIndex = index;
+
+    drawCall();
+</script>
+</body>
+</html>
+
+<!--
+        class="ui-btn ui-shadow ui-corner-all ui-icon-heart ui-btn-icon-notext">Fav</a>
+-->
